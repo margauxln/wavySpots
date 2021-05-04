@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		6252756C264023430056592E /* WavySpotsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6252756B264023430056592E /* WavySpotsApp.swift */; };
-		6252756E264023430056592E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6252756D264023430056592E /* ContentView.swift */; };
+		6252756E264023430056592E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6252756D264023430056592E /* HomeView.swift */; };
 		62527570264023460056592E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6252756F264023460056592E /* Assets.xcassets */; };
 		62527573264023460056592E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62527572264023460056592E /* Preview Assets.xcassets */; };
 		6252757E264023460056592E /* WavySpotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6252757D264023460056592E /* WavySpotsTests.swift */; };
 		62527589264023460056592E /* WavySpotsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62527588264023460056592E /* WavySpotsUITests.swift */; };
 		BF728FAE264040A6001D0C37 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF728FAD264040A6001D0C37 /* MapView.swift */; };
-		BF8E2DDA264033A700F80ACF /* surfImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E2DD9264033A700F80ACF /* surfImage.swift */; };
+		BF728FB026414772001D0C37 /* BoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF728FAF26414772001D0C37 /* BoxView.swift */; };
+		BF8E2DDA264033A700F80ACF /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E2DD9264033A700F80ACF /* CircleImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +38,7 @@
 /* Begin PBXFileReference section */
 		62527568264023430056592E /* WavySpots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WavySpots.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6252756B264023430056592E /* WavySpotsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WavySpotsApp.swift; sourceTree = "<group>"; };
-		6252756D264023430056592E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6252756D264023430056592E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		6252756F264023460056592E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62527572264023460056592E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		62527574264023460056592E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -48,7 +49,8 @@
 		62527588264023460056592E /* WavySpotsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WavySpotsUITests.swift; sourceTree = "<group>"; };
 		6252758A264023460056592E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF728FAD264040A6001D0C37 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		BF8E2DD9264033A700F80ACF /* surfImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = surfImage.swift; sourceTree = "<group>"; };
+		BF728FAF26414772001D0C37 /* BoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxView.swift; sourceTree = "<group>"; };
+		BF8E2DD9264033A700F80ACF /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +102,13 @@
 			isa = PBXGroup;
 			children = (
 				6252756B264023430056592E /* WavySpotsApp.swift */,
-				6252756D264023430056592E /* ContentView.swift */,
+				6252756D264023430056592E /* HomeView.swift */,
 				6252756F264023460056592E /* Assets.xcassets */,
 				62527574264023460056592E /* Info.plist */,
 				62527571264023460056592E /* Preview Content */,
-				BF8E2DD9264033A700F80ACF /* surfImage.swift */,
+				BF8E2DD9264033A700F80ACF /* CircleImage.swift */,
 				BF728FAD264040A6001D0C37 /* MapView.swift */,
+				BF728FAF26414772001D0C37 /* BoxView.swift */,
 			);
 			path = WavySpots;
 			sourceTree = "<group>";
@@ -265,10 +268,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6252756E264023430056592E /* ContentView.swift in Sources */,
+				6252756E264023430056592E /* HomeView.swift in Sources */,
 				BF728FAE264040A6001D0C37 /* MapView.swift in Sources */,
+				BF728FB026414772001D0C37 /* BoxView.swift in Sources */,
 				6252756C264023430056592E /* WavySpotsApp.swift in Sources */,
-				BF8E2DDA264033A700F80ACF /* surfImage.swift in Sources */,
+				BF8E2DDA264033A700F80ACF /* CircleImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

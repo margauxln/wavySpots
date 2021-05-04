@@ -7,17 +7,19 @@
 
 import SwiftUI
 
-struct SurfImage: View {
+struct CircleImage: View {
     var body: some View {
-        Image("surf")
+        Image("logoSurf")
+            .resizable()
+            .frame(width: 50, height: 50)
             .clipShape(Circle())
-            .overlay(Circle().stroke(Color.gray, lineWidth: 4))
             .shadow(radius: 7)
+            
     }
 }
 
-struct SurfImage_Previews: PreviewProvider {
+struct CircleImage_Previews: PreviewProvider {
     static var previews: some View {
-        SurfImage()
+        CircleImage()
     }
 }
