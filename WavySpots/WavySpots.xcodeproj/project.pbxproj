@@ -16,6 +16,9 @@
 		BF728FAE264040A6001D0C37 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF728FAD264040A6001D0C37 /* MapView.swift */; };
 		BF728FB026414772001D0C37 /* BoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF728FAF26414772001D0C37 /* BoxView.swift */; };
 		BF8E2DDA264033A700F80ACF /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E2DD9264033A700F80ACF /* CircleImage.swift */; };
+		F3664234264177310053B313 /* DestinationPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3664233264177310053B313 /* DestinationPageView.swift */; };
+		F366423626417BD10053B313 /* Data.json in Resources */ = {isa = PBXBuildFile; fileRef = F366423526417BD10053B313 /* Data.json */; };
+		F366423E26417FB50053B313 /* spotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366423D26417FB50053B313 /* spotModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		BF728FAD264040A6001D0C37 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		BF728FAF26414772001D0C37 /* BoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxView.swift; sourceTree = "<group>"; };
 		BF8E2DD9264033A700F80ACF /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		F3664233264177310053B313 /* DestinationPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationPageView.swift; sourceTree = "<group>"; };
+		F366423526417BD10053B313 /* Data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Data.json; sourceTree = "<group>"; };
+		F366423D26417FB50053B313 /* spotModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spotModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +107,13 @@
 		6252756A264023430056592E /* WavySpots */ = {
 			isa = PBXGroup;
 			children = (
+				F366423726417F010053B313 /* Models */,
+				F3664232264175BA0053B313 /* Views */,
 				6252756B264023430056592E /* WavySpotsApp.swift */,
-				6252756D264023430056592E /* HomeView.swift */,
 				6252756F264023460056592E /* Assets.xcassets */,
 				62527574264023460056592E /* Info.plist */,
 				62527571264023460056592E /* Preview Content */,
-				BF8E2DD9264033A700F80ACF /* CircleImage.swift */,
-				BF728FAD264040A6001D0C37 /* MapView.swift */,
-				BF728FAF26414772001D0C37 /* BoxView.swift */,
+				F366423526417BD10053B313 /* Data.json */,
 			);
 			path = WavySpots;
 			sourceTree = "<group>";
@@ -137,6 +142,26 @@
 				6252758A264023460056592E /* Info.plist */,
 			);
 			path = WavySpotsUITests;
+			sourceTree = "<group>";
+		};
+		F3664232264175BA0053B313 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BF8E2DD9264033A700F80ACF /* CircleImage.swift */,
+				BF728FAF26414772001D0C37 /* BoxView.swift */,
+				BF728FAD264040A6001D0C37 /* MapView.swift */,
+				6252756D264023430056592E /* HomeView.swift */,
+				F3664233264177310053B313 /* DestinationPageView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F366423726417F010053B313 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F366423D26417FB50053B313 /* spotModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,7 +242,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 62527563264023430056592E /* Build configuration list for PBXProject "wavySpots" */;
+			buildConfigurationList = 62527563264023430056592E /* Build configuration list for PBXProject "WavySpots" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -244,6 +269,7 @@
 			files = (
 				62527573264023460056592E /* Preview Assets.xcassets in Resources */,
 				62527570264023460056592E /* Assets.xcassets in Resources */,
+				F366423626417BD10053B313 /* Data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,8 +296,10 @@
 			files = (
 				6252756E264023430056592E /* HomeView.swift in Sources */,
 				BF728FAE264040A6001D0C37 /* MapView.swift in Sources */,
+				F3664234264177310053B313 /* DestinationPageView.swift in Sources */,
 				BF728FB026414772001D0C37 /* BoxView.swift in Sources */,
 				6252756C264023430056592E /* WavySpotsApp.swift in Sources */,
+				F366423E26417FB50053B313 /* spotModel.swift in Sources */,
 				BF8E2DDA264033A700F80ACF /* CircleImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -555,7 +583,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		62527563264023430056592E /* Build configuration list for PBXProject "wavySpots" */ = {
+		62527563264023430056592E /* Build configuration list for PBXProject "WavySpots" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6252758B264023460056592E /* Debug */,
