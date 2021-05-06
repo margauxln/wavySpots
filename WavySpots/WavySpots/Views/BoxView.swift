@@ -6,28 +6,35 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct BoxView: View {
     var image = ""
     var place = ""
     var description = ""
+    var url = URL(string: "https://dl.airtable.com/ZuXJZ2NnTF40kCdBfTld_thomas-ashlock-64485-unsplash.jpg")
     init(image:String, place:String, description: String) {
         self.image = image
         self.place = place
         self.description = description
+        self.url = URL(string: self.image)
     }
     var body: some View {
         HStack {
-            Image(self.image)
-                .resizable()
-                .frame(width: 50, height: 50)
-            VStack(alignment: .leading) {
-                Text(self.place)
-                    .font(Font.system(size:20, design: .default))
-                Text(self.description)
-                    .font(Font.system(size:15, design: .default))
+            URLImage(url: self.url!,
+                           content: { image in
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                           })
+                     //.frame(width: 50, height: 50)
+                     VStack(alignment: .leading) {
+                        Text(self.place)
+                            .font(Font.system(size:20, design: .default))
+                        Text(self.description)
+                            .font(Font.system(size:15, design: .default))
+                     }
             }
-        }
     }
 }
 

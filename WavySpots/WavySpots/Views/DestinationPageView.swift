@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct DestinationPageView: View {
-    var spot : Spot?
-    init(spot: Spot){self.spot = try? Spot}
+    var spot : Spot
+    init(spot: Spot){self.spot = spot}
 
     var body: some View {
-        Text(spot?.fields.Surfbreak[0] ?? "erreur")
-        .font(.title)
-        .foregroundColor(Color("Darkblue"))
-        Text(spot?.fields.Address ?? "erreur")
-        .font(.subheadline)
-        CircleImage(photo:spot?.fields.Photos[0].url ?? "erreur")
+        Text(spot.fields.Address)
+            .font(.title)
+            .foregroundColor(Color("Darkblue"))
+        Text(spot.fields.Surfbreak[0])
+            .font(.subheadline)
+        CircleImage(photo:spot.fields.Photos[0].url )
       MapView()
     }
 }

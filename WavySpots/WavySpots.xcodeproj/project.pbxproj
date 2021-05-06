@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,8 @@
 		6252757E264023460056592E /* WavySpotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6252757D264023460056592E /* WavySpotsTests.swift */; };
 		62527589264023460056592E /* WavySpotsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62527588264023460056592E /* WavySpotsUITests.swift */; };
 		625FB4812642EB70009BDBD2 /* try.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625FB4802642EB70009BDBD2 /* try.swift */; };
+		BF0BEC4726441A91000D5E49 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = BF0BEC4626441A91000D5E49 /* URLImage */; };
+		BF0BEC4926441E89000D5E49 /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0BEC4826441E89000D5E49 /* URLImage.swift */; };
 		BF728FAE264040A6001D0C37 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF728FAD264040A6001D0C37 /* MapView.swift */; };
 		BF728FB026414772001D0C37 /* BoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF728FAF26414772001D0C37 /* BoxView.swift */; };
 		BF8E2DDA264033A700F80ACF /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E2DD9264033A700F80ACF /* CircleImage.swift */; };
@@ -53,6 +55,7 @@
 		62527588264023460056592E /* WavySpotsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WavySpotsUITests.swift; sourceTree = "<group>"; };
 		6252758A264023460056592E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		625FB4802642EB70009BDBD2 /* try.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = try.swift; sourceTree = "<group>"; };
+		BF0BEC4826441E89000D5E49 /* URLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
 		BF728FAD264040A6001D0C37 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		BF728FAF26414772001D0C37 /* BoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxView.swift; sourceTree = "<group>"; };
 		BF8E2DD9264033A700F80ACF /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
@@ -66,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF0BEC4726441A91000D5E49 /* URLImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +121,7 @@
 				62527571264023460056592E /* Preview Content */,
 				F366423526417BD10053B313 /* Data.json */,
 				625FB4802642EB70009BDBD2 /* try.swift */,
+				BF0BEC4826441E89000D5E49 /* URLImage.swift */,
 			);
 			path = WavySpots;
 			sourceTree = "<group>";
@@ -183,6 +188,9 @@
 			dependencies = (
 			);
 			name = WavySpots;
+			packageProductDependencies = (
+				BF0BEC4626441A91000D5E49 /* URLImage */,
+			);
 			productName = WavySpots;
 			productReference = 62527568264023430056592E /* WavySpots.app */;
 			productType = "com.apple.product-type.application";
@@ -245,7 +253,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 62527563264023430056592E /* Build configuration list for PBXProject "WavySpots" */;
+			buildConfigurationList = 62527563264023430056592E /* Build configuration list for PBXProject "wavySpots" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -254,6 +262,9 @@
 				Base,
 			);
 			mainGroup = 6252755F264023430056592E;
+			packageReferences = (
+				BF0BEC4526441A91000D5E49 /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = 62527569264023430056592E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -298,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6252756E264023430056592E /* HomeView.swift in Sources */,
+				BF0BEC4926441E89000D5E49 /* URLImage.swift in Sources */,
 				BF728FAE264040A6001D0C37 /* MapView.swift in Sources */,
 				F3664234264177310053B313 /* DestinationPageView.swift in Sources */,
 				625FB4812642EB70009BDBD2 /* try.swift in Sources */,
@@ -587,7 +599,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		62527563264023430056592E /* Build configuration list for PBXProject "WavySpots" */ = {
+		62527563264023430056592E /* Build configuration list for PBXProject "wavySpots" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6252758B264023460056592E /* Debug */,
@@ -624,6 +636,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BF0BEC4526441A91000D5E49 /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BF0BEC4626441A91000D5E49 /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF0BEC4526441A91000D5E49 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 62527560264023430056592E /* Project object */;
 }

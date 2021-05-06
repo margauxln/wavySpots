@@ -8,13 +8,21 @@
 import Foundation
 
 struct Spot: Hashable, Codable {
+    static func == (lhs: Spot, rhs: Spot) -> Bool {
+        if (lhs.id == rhs.id){
+            return true
+        }else{
+            return false
+        }
+    }
+    
     var id: String
     var fields: Fields
 }
 struct Records: Codable {
     var records: [Spot]
 }
-struct Fields: Codable {
+struct Fields: Hashable, Codable {
     
     
     var Address : String
