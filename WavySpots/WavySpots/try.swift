@@ -26,7 +26,7 @@ var json = """
                 "Photos": [
                     {
                         "id": "attf6yu03NAtCuv5L",
-                        "url": "<https://dl.airtable.com/ZuXJZ2NnTF40kCdBfTld_thomas-ashlock-64485-unsplash.jpg>",
+                        "url": "https://dl.airtable.com/ZuXJZ2NnTF40kCdBfTld_thomas-ashlock-64485-unsplash.jpg",
                         "filename": "thomas-ashlock-64485-unsplash.jpg",
                         "size": 688397,
                         "type": "image/jpeg",
@@ -73,7 +73,7 @@ var json = """
                 "Photos": [
                     {
                         "id": "attKinKKZvgdS5A5U",
-                        "url": "<https://dl.airtable.com/YzqA020RRLaTyAZAta9g_brandon-compagne-308937-unsplash.jpg>",
+                        "url": "https://dl.airtable.com/YzqA020RRLaTyAZAta9g_brandon-compagne-308937-unsplash.jpg",
                         "filename": "brandon-compagne-308937-unsplash.jpg",
                         "size": 1494974,
                         "type": "image/jpeg",
@@ -119,7 +119,7 @@ var json = """
                 "Photos": [
                     {
                         "id": "attmtbEOAQteRjz2p",
-                        "url": "<https://dl.airtable.com/I4E4xZeQbO2g814udQDm_jeremy-bishop-80371-unsplash.jpg>",
+                        "url": "https://dl.airtable.com/I4E4xZeQbO2g814udQDm_jeremy-bishop-80371-unsplash.jpg",
                         "filename": "jeremy-bishop-80371-unsplash.jpg",
                         "size": 1524876,
                         "type": "image/jpeg",

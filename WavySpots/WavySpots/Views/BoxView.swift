@@ -12,16 +12,18 @@ struct BoxView: View {
     var image = ""
     var place = ""
     var description = ""
-    var url = URL(string: "https://dl.airtable.com/ZuXJZ2NnTF40kCdBfTld_thomas-ashlock-64485-unsplash.jpg")
+    var url = URL(string: "https://dl.airtable.com/ZuXJZ2NnTF40kCdBfTld_thomas-ashlock-64485-unsplash.jpg")!
     init(image:String, place:String, description: String) {
         self.image = image
         self.place = place
         self.description = description
-        self.url = URL(string: self.image)
+        if let url = URL(string: self.image){
+            self.url = url
+        }
     }
     var body: some View {
         HStack {
-            URLImage(url: self.url!,
+            URLImage(url: self.url,
                            content: { image in
                             image
                                 .resizable()
