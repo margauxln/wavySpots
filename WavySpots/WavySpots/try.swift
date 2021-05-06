@@ -6,6 +6,7 @@
 //
 
 import Foundation
+var json = """
 {
     "records": [
         {
@@ -151,5 +152,16 @@ import Foundation
     ],
     "offset": "recH2ennHFNOtB1Wt"
 }
+""".data(using: .utf8)!
+
+//struct Spot: Hashable, Codable {
+//    var id: String
+//    var fields: AnyObject
+//}
+//struct Records: Codable {
+//    var records: [Spot]
+//}
+
+
 
 

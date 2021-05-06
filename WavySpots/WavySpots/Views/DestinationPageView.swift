@@ -8,21 +8,22 @@
 import SwiftUI
 
 struct DestinationPageView: View {
-    var id = 0
-    init(id:Int){self.id = id}
+    var spot : Spot?
+    init(spot: Spot){self.spot = try? Spot}
+
     var body: some View {
-      Text("Hossegor")
+        Text(spot?.fields.Surfbreak[0] ?? "erreur")
         .font(.title)
         .foregroundColor(Color("Darkblue"))
-      Text("La plage des bogosse")
+        Text(spot?.fields.Address ?? "erreur")
         .font(.subheadline)
-      CircleImage()
+        CircleImage(photo:spot?.fields.Photos[0].url ?? "erreur")
       MapView()
     }
 }
 
-struct DestinationPageView_Previews: PreviewProvider {
-    static var previews: some View {
-        DestinationPageView()
-    }
-}
+//struct DestinationPageView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DestinationPageView(id:1)
+//    }
+//}
