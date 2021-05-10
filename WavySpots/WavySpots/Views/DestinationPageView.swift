@@ -17,7 +17,7 @@ struct DestinationPageView: View {
             .foregroundColor(Color("Darkblue"))
         Text(spot.fields.Surfbreak[0])
             .font(.subheadline)
-        CircleImage(photo:spot.fields.Photos[0].url )
+        CircleImage(photo:spot.fields.Photos[0].url)
       MapView()
     }
 }
