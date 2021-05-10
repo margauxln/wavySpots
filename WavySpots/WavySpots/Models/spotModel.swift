@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct Spot: Hashable, Codable {
     static func == (lhs: Spot, rhs: Spot) -> Bool {
@@ -39,3 +40,16 @@ struct Photos: Hashable, Codable{
     var url : String
 }
 
+class Api {
+    func getSpots() {
+        guard let url = URL(string:"https://api.airtable.com/v0/appxT9ln6ixuCb3o1/Surf%20Destinations?api_key=keyTbt7JjwqkfNnYn") else {return}
+        URLSession.shared.dataTask(with: url) { (data,_,_)in
+            let decoder = JSONDecoder()
+            let spots = try? decoder.decode(Records.self, from: data!)
+            print(spots)
+        }
+        .resume()
+    }
+    
+    
+}

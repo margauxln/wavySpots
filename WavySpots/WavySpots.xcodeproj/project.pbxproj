@@ -253,7 +253,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 62527563264023430056592E /* Build configuration list for PBXProject "wavySpots" */;
+			buildConfigurationList = 62527563264023430056592E /* Build configuration list for PBXProject "WavySpots" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -599,7 +599,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		62527563264023430056592E /* Build configuration list for PBXProject "wavySpots" */ = {
+		62527563264023430056592E /* Build configuration list for PBXProject "WavySpots" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6252758B264023460056592E /* Debug */,
