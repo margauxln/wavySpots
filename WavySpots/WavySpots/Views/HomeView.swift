@@ -5,8 +5,9 @@ import SwiftUI
 
 
 struct HomeView: View {
+    @State var isNavigationBarHidden: Bool = true
+
     @State var product: Records?
-    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -23,6 +24,7 @@ struct HomeView: View {
             }
 
             NavigationView {
+               
                 List {
                     ForEach(product?.records ?? [], id: \.self) { Spot in
                         NavigationLink(
@@ -37,9 +39,14 @@ struct HomeView: View {
                     Api().getSpots { spots in
                         product = spots
                     }
+                    
                }
+                .navigationBarHidden(self.isNavigationBarHidden)
+                            .onAppear {
+                                self.isNavigationBarHidden = true
+                            }
+                
             }
-            Spacer()
 
         }
         .padding()
