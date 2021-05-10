@@ -5,11 +5,8 @@ import SwiftUI
 
 
 struct HomeView: View {
-    var product: Records?
-    init(){
-        let decoder = JSONDecoder()
-        self.product = try? decoder.decode(Records.self, from: json)
-    }
+    @State var product: Records?
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -36,6 +33,11 @@ struct HomeView: View {
                     }
 
                 }
+                .onAppear {
+                    Api().getSpots { spots in
+                        product = spots
+                    }
+               }
             }
             Spacer()
 

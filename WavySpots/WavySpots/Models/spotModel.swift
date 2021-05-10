@@ -41,12 +41,14 @@ struct Photos: Hashable, Codable{
 }
 
 class Api {
-    func getSpots() {
+    func getSpots(completion: @escaping(Records) -> ()) {
         guard let url = URL(string:"https://api.airtable.com/v0/appxT9ln6ixuCb3o1/Surf%20Destinations?api_key=keyTbt7JjwqkfNnYn") else {return}
         URLSession.shared.dataTask(with: url) { (data,_,_)in
             let decoder = JSONDecoder()
             let spots = try? decoder.decode(Records.self, from: data!)
-            print(spots)
+            DispatchQueue.main.async {
+                completion(spots!)
+            }
         }
         .resume()
     }
