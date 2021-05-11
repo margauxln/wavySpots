@@ -1,8 +1,4 @@
 import SwiftUI
-//var spots = [ Spot(id: 1, SurfBreak: "Reef Break" , Photos: "surf1", Address: "Pipeline, Oahu, Hawaii"),
-//              Spot(id: 2, SurfBreak: "Point Break" , Photos: "surf2", Address: "Supertubes, Jeffreys Bay, South Africa")
-//]
-
 
 struct HomeView: View {
     @State var isNavigationBarHidden: Bool = true
