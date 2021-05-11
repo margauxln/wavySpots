@@ -34,7 +34,7 @@ struct CircleImage: View {
                             .clipShape(Circle())
                      })
         }
-    }
+            }
 }
 
 //struct CircleImage_Previews: PreviewProvider {

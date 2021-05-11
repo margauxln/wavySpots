@@ -9,15 +9,15 @@ import Foundation
 import SwiftUI
 
 struct Spot: Hashable, Codable {
-    static func == (lhs: Spot, rhs: Spot) -> Bool {
-        if (lhs.id == rhs.id){
-            return true
-        }else{
-            return false
-        }
-    }
+//    static func == (lhs: Spot, rhs: Spot) -> Bool {
+//        if (lhs.id == rhs.id){
+//            return true
+//        }else{
+//            return false
+//        }
+//    }
     
-    var id : String
+    //var id : String
     var fields: Fields
     
     //private enum CodingKeys: String, CodingKey {
@@ -31,13 +31,13 @@ struct Records: Codable {
 
 struct Fields: Hashable, Codable {
     
-    var Address : String
+    var Destination : String
     var Photos : [Photos]
     var Surfbreak : [String]
     
     enum CodingKeys: String, CodingKey {
         case Surfbreak = "Surf Break"
-        case Address
+        case Destination
         case Photos
     }
 }
@@ -72,8 +72,8 @@ class Api {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         let newPhoto = Photos(url:"https://www.surfing-iroise.com/wp-content/uploads/2017/06/drone_surfing_iroise_blancs_sablons.jpg")
-        let newField = Fields(Address: "LeConquet", Photos: [newPhoto], Surfbreak: ["Point Break"])
-        let newSpot = Spot(id: UUID().uuidString, fields: newField)
+        let newField = Fields(Destination: "LeConquet", Photos: [newPhoto], Surfbreak: ["Point Break"])
+        let newSpot = Spot(fields: newField)
         let jsonData = try? JSONEncoder().encode(newSpot)
         request.httpBody = jsonData
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
@@ -84,6 +84,8 @@ class Api {
             }
             guard let data = data else {return}
             do{
+                let string = String(decoding:data,as: UTF8.self)
+                print (string)
                 let newSpot = try JSONDecoder().decode(Spot.self, from: data)
                 print("Response data:\n \(newSpot)")
                 print("todoItemModel Title: \(newSpot.fields)")
