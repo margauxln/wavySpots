@@ -17,14 +17,19 @@ struct Spot: Hashable, Codable {
         }
     }
     
-    var id: String
+    var id : String
     var fields: Fields
+    
+    //private enum CodingKeys: String, CodingKey {
+    //    case fields
+    //}
 }
+
 struct Records: Codable {
     var records: [Spot]
 }
+
 struct Fields: Hashable, Codable {
-    
     
     var Address : String
     var Photos : [Photos]
@@ -36,6 +41,7 @@ struct Fields: Hashable, Codable {
         case Photos
     }
 }
+
 struct Photos: Hashable, Codable{
     var url : String
 }
@@ -62,24 +68,30 @@ class Api {
         request.httpMethod = "POST"
         
         // HTTP Request Parameters which will be sent in HTTP Request Body
-        let postString = "Address=Le conquet&Surfbreak=Beach Break&Photos=https://www.surfing-iroise.com/wp-content/uploads/2017/06/drone_surfing_iroise_blancs_sablons.jpg";
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        // Set HTTP Request Body
-        request.httpBody = postString.data(using: String.Encoding.utf8);
-        
-        // Perform HTTP Request
+        let newPhoto = Photos(url:"https://www.surfing-iroise.com/wp-content/uploads/2017/06/drone_surfing_iroise_blancs_sablons.jpg")
+        let newField = Fields(Address: "LeConquet", Photos: [newPhoto], Surfbreak: ["Point Break"])
+        let newSpot = Spot(id: UUID().uuidString, fields: newField)
+        let jsonData = try? JSONEncoder().encode(newSpot)
+        request.httpBody = jsonData
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             
-            // Check for Error
             if let error = error {
                 print("Error took place \(error)")
                 return
             }
-            
-            // Convert HTTP Response Data to a String
-            if let data = data, let dataString = String(data: data, encoding: .utf8) {
-                print("Response data string:\n \(dataString)")
+            guard let data = data else {return}
+            do{
+                let newSpot = try JSONDecoder().decode(Spot.self, from: data)
+                print("Response data:\n \(newSpot)")
+                print("todoItemModel Title: \(newSpot.fields)")
+                //print("todoItemModel id: \(newSpot.id)")
+            }catch let jsonErr{
+                print(jsonErr)
             }
+            
         }
         task.resume()
         

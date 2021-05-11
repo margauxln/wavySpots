@@ -9,11 +9,12 @@ import SwiftUI
 
 struct SurfBreak {
     static let allSurfBreaks = [
-        "Beach Break",
         "Point Break",
         "Reef Break",
-        "River Break",
-        "Artificial Break"
+        "River Bar",
+        "Rivermouth Break",
+        "Jetty Break",
+        "Outer Banks",
     ]
 }
 
@@ -33,6 +34,7 @@ struct CreateSpotView: View {
                 }
                 TextField("Photo", text: $photo)
                 Button(action: {
+                    Api().addSpot()
                     print("Save Spot")
                 }) {
                     HStack {
