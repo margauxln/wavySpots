@@ -12,7 +12,7 @@ struct DestinationPageView: View {
     init(spot: Spot){self.spot = spot}
 
     var body: some View {
-        Text(spot.fields.Destination)
+        Text(spot.fields.Address)
             .font(.title)
             .foregroundColor(Color("Darkblue"))
         Text(spot.fields.Surfbreak[0])

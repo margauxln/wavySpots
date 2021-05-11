@@ -31,13 +31,13 @@ struct Records: Codable {
 
 struct Fields: Hashable, Codable {
     
-    var Destination : String
+    var Address : String
     var Photos : [Photos]
     var Surfbreak : [String]
     
     enum CodingKeys: String, CodingKey {
         case Surfbreak = "Surf Break"
-        case Destination
+        case Address
         case Photos
     }
 }
@@ -72,7 +72,7 @@ class Api {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         let newPhoto = Photos(url:"https://www.surfing-iroise.com/wp-content/uploads/2017/06/drone_surfing_iroise_blancs_sablons.jpg")
-        let newField = Fields(Destination: "LeConquet", Photos: [newPhoto], Surfbreak: ["Point Break"])
+        let newField = Fields(Address: "LeConquet", Photos: [newPhoto], Surfbreak: ["Point Break"])
         let newSpot = Spot(fields: newField)
         let jsonData = try? JSONEncoder().encode(newSpot)
         request.httpBody = jsonData

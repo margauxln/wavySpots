@@ -26,7 +26,7 @@ struct HomeView: View {
                         NavigationLink(
                             destination: DestinationPageView(spot:Spot)
                         ) {
-                            BoxView(image: Spot.fields.Photos[0].url, place: Spot.fields.Destination, description: Spot.fields.Surfbreak[0])
+                            BoxView(image: Spot.fields.Photos[0].url, place: Spot.fields.Address, description: Spot.fields.Surfbreak[0])
                         }
                     }
 
