@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct Spot: Hashable, Codable {
+struct Spot: Decodable, Hashable, Encodable  {
 //    static func == (lhs: Spot, rhs: Spot) -> Bool {
 //        if (lhs.id == rhs.id){
 //            return true
@@ -25,32 +25,37 @@ struct Spot: Hashable, Codable {
     //}
 }
 
-struct Records: Codable {
+struct Records: Decodable, Hashable, Encodable  {
     var records: [Spot]
 }
 
-struct Fields: Hashable, Codable {
-    
-    var Address : String
+struct Fields: Decodable, Hashable, Encodable {
+    var Destination : String
     var Photos : [Photos]
     var Surfbreak : [String]
     
     enum CodingKeys: String, CodingKey {
         case Surfbreak = "Surf Break"
-        case Address
+        case Destination = "Destination"
         case Photos
     }
 }
 
-struct Photos: Hashable, Codable{
+struct Photos: Decodable, Hashable, Encodable{
     var url : String
 }
 
 class Api {
     func getSpots(completion: @escaping(Records) -> ()) {
         guard let url = URL(string:"https://api.airtable.com/v0/appxT9ln6ixuCb3o1/Surf%20Destinations?api_key=keyTbt7JjwqkfNnYn") else {return}
-        URLSession.shared.dataTask(with: url) { (data,_,_)in
+        URLSession.shared.dataTask(with: url) { (data,response,error)in
+            if let error = error {
+                        print("Error took place \(error)")
+                        return
+                    }
             let decoder = JSONDecoder()
+            let string2 = String(data: data!, encoding: String.Encoding.utf8)
+            print(string2)
             let spots = try? decoder.decode(Records.self, from: data!)
             DispatchQueue.main.async {
                 completion(spots!)
@@ -72,7 +77,7 @@ class Api {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         let newPhoto = Photos(url:"https://www.surfing-iroise.com/wp-content/uploads/2017/06/drone_surfing_iroise_blancs_sablons.jpg")
-        let newField = Fields(Address: "LeConquet", Photos: [newPhoto], Surfbreak: ["Point Break"])
+        let newField = Fields(Destination: "Le conquet", Photos: [newPhoto], Surfbreak: ["Point Break"])
         let newSpot = Spot(fields: newField)
         let jsonData = try? JSONEncoder().encode(newSpot)
         request.httpBody = jsonData
@@ -85,8 +90,10 @@ class Api {
             guard let data = data else {return}
             do{
                 let string = String(decoding:data,as: UTF8.self)
+                print("coucou")
                 print (string)
                 let newSpot = try JSONDecoder().decode(Spot.self, from: data)
+                print(newSpot)
                 print("Response data:\n \(newSpot)")
                 print("todoItemModel Title: \(newSpot.fields)")
                 //print("todoItemModel id: \(newSpot.id)")

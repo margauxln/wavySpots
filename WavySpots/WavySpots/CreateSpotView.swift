@@ -25,7 +25,7 @@ struct CreateSpotView: View {
     var body: some View {
         NavigationView {
             Form {
-                TextField("Address", text: $address)
+                TextField("Destination", text: $address)
                 Picker(selection: $surfBreak,
                        label: Text("Surf Break")) {
                     ForEach(SurfBreak.allSurfBreaks, id: \.self) { surfBreak in
