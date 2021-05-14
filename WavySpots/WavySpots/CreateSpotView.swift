@@ -19,22 +19,22 @@ struct SurfBreak {
 }
 
 struct CreateSpotView: View {
-    @State var address: String = ""
-    @State private var surfBreak: String = ""
-    @State var photo : String = ""
+    @State var destinationForm: String = ""
+    @State private var surfbreakForm: String = ""
+    @State var photoForm : String = ""
     var body: some View {
         NavigationView {
             Form {
-                TextField("Destination", text: $address)
-                Picker(selection: $surfBreak,
+                TextField("Destination", text: $destinationForm)
+                Picker(selection: $surfbreakForm,
                        label: Text("Surf Break")) {
                     ForEach(SurfBreak.allSurfBreaks, id: \.self) { surfBreak in
                         Text(surfBreak).tag(surfBreak)
                     }
                 }
-                TextField("Photo", text: $photo)
+                TextField("Photo", text: $photoForm)
                 Button(action: {
-                    Api().addSpot()
+                    Apipost(photoForm: photoForm,surfbreakForm: [surfbreakForm], destinationForm: destinationForm).addSpot()
                     print("Save Spot")
                 }) {
                     HStack {

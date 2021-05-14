@@ -9,13 +9,13 @@ import Foundation
 import SwiftUI
 
 struct Spot: Decodable, Hashable, Encodable  {
-//    static func == (lhs: Spot, rhs: Spot) -> Bool {
-//        if (lhs.id == rhs.id){
-//            return true
-//        }else{
-//            return false
-//        }
-//    }
+    //    static func == (lhs: Spot, rhs: Spot) -> Bool {
+    //        if (lhs.id == rhs.id){
+    //            return true
+    //        }else{
+    //            return false
+    //        }
+    //    }
     
     //var id : String
     var fields: Fields
@@ -50,9 +50,9 @@ class Api {
         guard let url = URL(string:"https://api.airtable.com/v0/appxT9ln6ixuCb3o1/Surf%20Destinations?api_key=keyTbt7JjwqkfNnYn") else {return}
         URLSession.shared.dataTask(with: url) { (data,response,error)in
             if let error = error {
-                        print("Error took place \(error)")
-                        return
-                    }
+                print("Error took place \(error)")
+                return
+            }
             let decoder = JSONDecoder()
             let string2 = String(data: data!, encoding: String.Encoding.utf8)
             print(string2)
@@ -63,7 +63,22 @@ class Api {
         }
         .resume()
     }
+}
+
+    
+class Apipost {
+    var photoForm = ""
+    var surfbreakForm = [""]
+    var destinationForm = ""
+    
+    init (photoForm: String,surfbreakForm: [String],destinationForm: String){
+        self.photoForm = photoForm
+        self.surfbreakForm = surfbreakForm
+        self.destinationForm = destinationForm}
+    
+    
     func addSpot()->() {
+        
         // Prepare URL
         let url = URL(string: "https://api.airtable.com/v0/appxT9ln6ixuCb3o1/Surf%20Destinations?api_key=keyTbt7JjwqkfNnYn")
         guard let requestUrl = url else { fatalError() }
@@ -76,8 +91,9 @@ class Api {
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        let newPhoto = Photos(url:"https://www.surfing-iroise.com/wp-content/uploads/2017/06/drone_surfing_iroise_blancs_sablons.jpg")
-        let newField = Fields(Destination: "Le conquet", Photos: [newPhoto], Surfbreak: ["Point Break"])
+        let newPhoto = Photos(url: self.photoForm)
+        let newField = Fields(Destination: self.destinationForm
+                              , Photos: [newPhoto], Surfbreak: self.surfbreakForm)
         let newSpot = Spot(fields: newField)
         let jsonData = try? JSONEncoder().encode(newSpot)
         request.httpBody = jsonData
@@ -106,3 +122,4 @@ class Api {
         
     }
 }
+
