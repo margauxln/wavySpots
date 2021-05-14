@@ -27,9 +27,10 @@ struct BoxView: View {
                            content: { image in
                             image
                                 .resizable()
+                                .frame(width: 60, height: 60)
                                 .aspectRatio(contentMode: .fit)
                            })
-                     //.frame(width: 50, height: 50)
+    
                      VStack(alignment: .leading) {
                         Text(self.place)
                             .font(Font.system(size:20, design: .default))
